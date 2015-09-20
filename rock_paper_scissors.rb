@@ -38,10 +38,17 @@ class RockPaperScissors
   end
 
   def self.tournament_winner(tournament)
-    return "Nothing"
+    puts "Next Level"
+    if(tournament[0][0].is_a? String)
+	puts winner(tournament[0], tournament[1])
+        puts "end"
+	return winner(tournament[0], tournament[1])
+    else
+        tournament_winner(tournament[0])
+        tournament_winner(tournament[1])
+    end
   end
 end
 
-puts RockPaperScissors.winner(["Me", "p"], ["her", "r"])
 
 puts RockPaperScissors.tournament_winner([[["Me", "p"], ["her", "r"]], [["Him", "s"], ["sher", "r"]]])
