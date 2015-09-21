@@ -45,15 +45,13 @@ class JellyBean < Dessert
     end
     return @is_delicious
   end
-  def set_flavor(flavor)
+  def flavor=(flavor)
     @jb_flavor = flavor
     @name = flavor + " jelly bean"
+    self.delicious?
   end
-  def get_flavor
+  def flavor
     return @jb_flavor
   end
 end
    
-my_candy = JellyBean.new("vanilla")
-my_candy.set_flavor("root_bear")
-puts my_candy.get_flavor
